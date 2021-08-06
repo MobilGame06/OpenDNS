@@ -1,4 +1,5 @@
 local term = require("term")
+local fs = require("filesystem")
 
 term.clear()
 
@@ -8,7 +9,13 @@ print("[2] Client")
 local input = io.read()
 
 if input == "1" then
-    print("1")
+    fs.makeDirectory("/dns")
+os.execute("wget 'https://raw.githubusercontent.com/MobilGame06/OpenDNS/main/dns/lib/ttf.lua' /lib/ttf.lua")
+os.execute("wget 'https://raw.githubusercontent.com/MobilGame06/OpenDNS/main/dns/dns/data.cfg' /dns/data.cfg")
+os.execute("wget 'https://raw.githubusercontent.com/MobilGame06/OpenDNS/main/dns/server.lua' /home/server.lua")
+
 elseif input == "2" then
-    print("2")
+os.execute("wget 'https://raw.githubusercontent.com/MobilGame06/OpenDNS/main/dns/lib/dns%20library.lua' /lib/dns.lua")
 end 
+
+term.clear()
