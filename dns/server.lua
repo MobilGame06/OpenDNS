@@ -7,7 +7,7 @@ local modem = component.modem
 
 local port = 404
 
-local path = "/home/lol.cfg"
+local path = "/dns/data.cfg"
 settings = ttf.load(path)
 
 
