@@ -1,14 +1,15 @@
 local component = require("component")
 local event = require('event')
 local term = require('term')
+local ttf = require("ttf")
 
 local modem = component.modem
 
 local port = 404
 
-dnsdata = {
-    ['test'] = '00000000-0000-0000-0000-000000000000'
-}
+local path = "/home/lol.cfg"
+settings = ttf.load(path)
+
 
 
 local localAddress = ''
@@ -31,7 +32,7 @@ for address, _ in component.list("modem", false) do
       local param = string.gsub(tostring(param), '\n', '')
       print("Request from "..from)
       if command == "lookup" then
-        addr = tostring(dnsdata[param])
+        addr = tostring(settings[param])
         print('DNS Lookup: '.. param .. ' -> ' .. addr)
         modem.send(from, port, addr)
       end
