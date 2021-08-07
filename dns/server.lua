@@ -53,7 +53,7 @@ for address, _ in component.list("modem", false) do
       local command = string.lower(tostring(command))
       local param = string.gsub(tostring(param), '\n', '')
       term.clearLine()
-      term.write(sprefix.. "Request from "..from)
+      term.write(sprefix.. "Request from "..from .."\n")
       if command == "lookup" then
         addr = tostring(settings[param])
         term.clearLine()
