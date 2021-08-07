@@ -27,13 +27,18 @@ function _setPort(p)
     timeout = timeout or 1
     if modem.send(address, port, 'lookup', dns) then
         local _, _, from, rport, _, reply = event.pull(timeout, 'modem_message')
+
         if reply == nil then
             return false
         elseif reply == 'nil' then
             return nil
-        else
+        elseif from == address then
             return reply
         end 
+   
+   
+   
+   
     else
         return false
     end       
