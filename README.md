@@ -19,6 +19,6 @@ any Memory
 
 any hard disk
 
-a Internet Card 
+a Internet Card (for installation)
 
 a wirerless or network card
