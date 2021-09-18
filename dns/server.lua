@@ -15,7 +15,6 @@ local path = "/dns/data.cfg"
 settings = ttf.load(path)
 
 
-
 local localAddress = ''
 
 for address, _ in component.list("modem", false) do
@@ -34,6 +33,16 @@ for address, _ in component.list("modem", false) do
       os.execute("reboot")
     elseif input == "stop" then
       os.execute("shutdown")
+    elseif input == "reload" then
+      settings = ttf.load(path)
+      term.write(cprefix.. "Reloaded\n")
+    elseif input == "help" then
+      term.write("------------Help-------------\n")
+      term.write(cprefix.. "[reboot] reboot your pc\n")
+      term.write(cprefix.. "[shutdown] shutdown your pc\n")
+      term.write(cprefix.. "[reload] reload the config\n")
+    else 
+      term.write(cprefix.. "This command don't exist try to use help\n")
     end 
   end
   end)
@@ -45,7 +54,6 @@ for address, _ in component.list("modem", false) do
   term.write(sprefix.. "Adress: ")
   term.write(localAddress .."\n")
   
-
 
   
   while true do

@@ -37,8 +37,6 @@ function _setPort(p)
         end 
    
    
-   
-   
     else
         return false
     end       

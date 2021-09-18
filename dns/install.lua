@@ -13,6 +13,7 @@ if input == "1" then
 os.execute("wget 'https://raw.githubusercontent.com/MobilGame06/OpenDNS/main/dns/lib/ttf.lua' /lib/ttf.lua")
 os.execute("wget 'https://raw.githubusercontent.com/MobilGame06/OpenDNS/main/dns/dns/data.cfg' /dns/data.cfg")
 os.execute("wget 'https://raw.githubusercontent.com/MobilGame06/OpenDNS/main/dns/server.lua' /home/server.lua")
+os.execute("wget 'https://raw.githubusercontent.com/MobilGame06/OpenDNS/main/dns/createnew.lua' /home/create.lua")
 
 elseif input == "2" then
 os.execute("wget 'https://raw.githubusercontent.com/MobilGame06/OpenDNS/main/dns/lib/dns%20library.lua' /lib/dns.lua")
