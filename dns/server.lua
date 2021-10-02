@@ -39,8 +39,10 @@ for address, _ in component.list("modem", false) do
     elseif input == "help" then
       term.write("------------Help-------------\n")
       term.write(cprefix.. "[reboot] reboot your pc\n")
-      term.write(cprefix.. "[shutdown] shutdown your pc\n")
+      term.write(cprefix.. "[stop] shutdown your pc\n")
       term.write(cprefix.. "[reload] reload the config\n")
+    elseif input == "create" then
+
     else 
       term.write(cprefix.. "This command don't exist try to use help\n")
     end 
