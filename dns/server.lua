@@ -14,6 +14,7 @@ local port = 404
 local path = "/dns/data.cfg"
 settings = ttf.load(path)
 
+readcmd = false
 
 local localAddress = ''
 
@@ -26,7 +27,8 @@ for address, _ in component.list("modem", false) do
   term.clear()
 
   local t1 = thread.create(function()    
-    while true do
+    readcmd = true
+    while readcmd do
     term.setCursor(1,50)
     input = io.read()
     if input == "reboot" then
@@ -42,12 +44,27 @@ for address, _ in component.list("modem", false) do
       term.write(cprefix.. "[stop] shutdown your pc\n")
       term.write(cprefix.. "[reload] reload the config\n")
     elseif input == "create" then
-
+      create()
     else 
       term.write(cprefix.. "This command don't exist try to use help\n")
     end 
   end
   end)
+
+function create()
+  local t2 = thread.create(function()
+    readcmd = false
+    term.write("\n")
+    term.write("Type the name of the dns you want to create?\n")
+    local name = io.read()
+    term.write("Type your uuid\n")
+    local uu = io.read()
+    readcmd = true
+    settings[name] = uu
+    ttf.save(settings, path)
+    os.execute("reboot")
+  end)
+end
 
 
 
