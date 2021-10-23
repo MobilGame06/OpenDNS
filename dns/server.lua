@@ -43,6 +43,7 @@ for address, _ in component.list("modem", false) do
       term.write(cprefix.. "[reboot] reboot your pc\n")
       term.write(cprefix.. "[stop] shutdown your pc\n")
       term.write(cprefix.. "[reload] reload the config\n")
+      term.write(cprefix.. "[create] create a dns entry\n")
     elseif input == "create" then
       create()
     else 
