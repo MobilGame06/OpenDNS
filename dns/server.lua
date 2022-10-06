@@ -90,6 +90,7 @@ end
         term.clearLine()
         term.write(sprefix.. 'DNS Lookup: '.. param .. ' -> ' .. addr)
         term.write("\n")
+        term.write("\n")
         modem.send(from, port, addr)
       end     
   end
