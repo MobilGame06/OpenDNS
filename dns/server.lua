@@ -84,6 +84,7 @@ end
       local param = string.gsub(tostring(param), '\n', '')
       term.clearLine()
       term.write(sprefix.. "Request from "..from .."\n")
+      term.write("\n")
       if command == "lookup" then
         addr = tostring(settings[param])
         term.clearLine()
